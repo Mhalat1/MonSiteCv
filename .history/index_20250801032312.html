@@ -1456,7 +1456,7 @@
         if (ip && submissionHistory[ip]) {
             const now = Date.now();
             const lastSubmission = submissionHistory[ip];
-            return (now - lastSubmission < 86400000); // 24 heure en ms
+            return (now - lastSubmission < 3600000); // 1 heure en ms
         }
         return false;
     }
@@ -1468,32 +1468,12 @@
         submitBtn.classList.add('disabled');
 
         // Vérifier le blocage existant
-
-// Vérifier le blocage existant (24h)
-if (isSubmissionBlocked()) {
-    const ip = Object.keys(submissionHistory)[0];
-    
-    const timeDiff = Date.now() - submissionHistory[ip];
-    const remainingMs = 86400000 - timeDiff;
-    
-    const remainingHours = Math.floor(remainingMs / 3600000);
-    const remainingMinutes = Math.ceil((remainingMs % 3600000) / 60000);
-    
-    let remainingMessage;
-    if (remainingHours > 0) {
-        remainingMessage = `${remainingHours}h ${remainingMinutes}m`;
-    } else {
-        remainingMessage = `${remainingMinutes} minutes`;
-    }
-    
-    showAlert(
-        `Vous ne pouvez envoyer qu'un message par jour. Temps restant: ${remainingMessage}`, 
-        'error',
-        false
-    );
-    
-    submitBtn.disabled = true;
-}
+        if (isSubmissionBlocked()) {
+            const ip = Object.keys(submissionHistory)[0];
+            const remainingTime = Math.ceil((86400000 - (Date.now() - submissionHistory[ip])) / 3600000);
+            showAlert(`Vous ne pouvez envoyer qu'un message par jour. Temps restant: ${remainingTime} minutes`, 'error', false );
+            submitBtn.disabled = true;
+        }
 
         // Style pour le bouton désactivé
         const style = document.createElement('style');
@@ -1545,6 +1525,13 @@ if (isSubmissionBlocked()) {
             return false;
         }
 
+        // Vérification limitation
+        if (isSubmissionBlocked()) {
+            const ip = Object.keys(submissionHistory)[0];
+            const remainingTime = Math.ceil((86400000 - (Date.now() - submissionHistory[ip])) / 3600000);
+            showAlert(`Vous ne pouvez envoyer qu'un message par jour. Temps restant: ${Math.ceil(remainingTime)} heures`, 'error');
+            return false;
+        }
 
         // Préparation de l'envoi
         submitBtn.innerHTML = '<span>⏳</span> Envoi en cours...';
