@@ -889,10 +889,10 @@
 
                 <div class="experience-content">
                     <div class="experience-sidebar">
-                        <div class="company-item active" data-company="IVMA">IVMA</div>
-                        <div class="company-item" data-company="Formatech">Formatech</div>
-                        <div class="company-item" data-company="VeloMarket">VeloMarket</div>
-                        <div class="company-item" data-company="VeloMarket">Projets Personnel</div>
+                        <div class="company-item active" data-company="tech-innovate">IVMA</div>
+                        <div class="company-item" data-company="digital-solutions">Formatech</div>
+                        <div class="company-item" data-company="startup-lab">VeloMarket</div>
+                        <div class="company-item" data-company="Personnel">Projets Personnel</div>
                     </div>
                     <div class="experience-details">
                         <div class="experience-placeholder">
@@ -1268,7 +1268,7 @@
     </div>
 
     <!-- Modals for Expertise -->
-    <div id="modal-IVMA" class="modal">
+    <div id="modal-web-development" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="modal-header">
@@ -1303,7 +1303,7 @@
         </div>
     </div>
 
-    <div id="modal-Formatech" class="modal">
+    <div id="modal-mobile-apps" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="modal-header">
@@ -1338,7 +1338,7 @@
         </div>
     </div>
 
-    <div id="modal-VeloMarket" class="modal">
+    <div id="modal-ui-ux-design" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="modal-header">
@@ -1373,7 +1373,7 @@
         </div>
     </div>
 
-    <div id="modal-Projets Personnel" class="modal">
+    <div id="modal-consulting" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="modal-header">
@@ -1690,30 +1690,35 @@
 
             // Experience modals
 
-            const companyItems = document.querySelectorAll('.company-item');
-            const allModals = document.querySelectorAll('.modal');
-            const closeButtons = document.querySelectorAll('.close');
+document.addEventListener('DOMContentLoaded', function() {
+    const companyItems = document.querySelectorAll('.company-item');
+    const allModals = document.querySelectorAll('.modal');
+    const closeButtons = document.querySelectorAll('.close');
 
-            companyItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    companyItems.forEach(i => i.classList.remove('active'));
-                    item.classList.add('active');
+    // Fonction pour ouvrir une modale
+    function openModal(modal) {
+        // Fermer toutes les modales d'abord
+        closeAllModals();
+        
+        // Afficher la modale demandée
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Empêcher le défilement
+        
+        // Animation d'apparition
+        modal.style.opacity = '0';
+        modal.querySelector('.modal-content').style.transform = 'translateY(-20px)';
+        
+        setTimeout(() => {
+            modal.style.opacity = '1';
+            modal.querySelector('.modal-content').style.transform = 'translateY(0)';
+        }, 10);
+    }
 
-                    const company = item.getAttribute('data-company');
-                    const modal = document.getElementById(`modal-${company}`);
-
-                    if (modal) {
-                        openModal(modal);
-                    }
-                });
-            });
 
 
 
 
 
-
-            
 
             // Demo buttons for video modals
             const demoBtns = document.querySelectorAll('.open-video-modal');
