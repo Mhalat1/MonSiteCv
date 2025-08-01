@@ -13,12 +13,12 @@
     <style>
         :root {
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --dark-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            --dark-gradient: linear-gradient(135deg, #000000 0%, #004887 50%, #0088ff 100%);
             --accent-blue: #4f46e5;
             --accent-purple: #7c3aed;
             --accent-orange: #ff6b6b;
             --text-primary: #ffffff;
-            --text-secondary: #a1a1aa;
+            --text-secondary: #000000;
             --text-dark: #18181b;
             --surface-glass: rgba(255, 255, 255, 0.1);
             --surface-card: rgba(255, 255, 255, 0.05);
@@ -35,7 +35,7 @@
         body {
             font-family: 'Inter', sans-serif;
             background: var(--dark-gradient);
-            color: var(--text-primary);
+            color: black;
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -53,9 +53,9 @@
 
         .particle {
             position: absolute;
-            width: 2px;
-            height: 2px;
-            background: var(--accent-blue);
+            width: 3px;
+            height: 6px;
+            background: white;
             border-radius: 50%;
             animation: float 20s infinite linear;
             opacity: 0.6;
@@ -82,7 +82,7 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
             padding: 0 24px;
         }
@@ -92,7 +92,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(26, 26, 46, 0.8);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border-glass);
             z-index: 1000;
@@ -101,7 +101,7 @@
         }
 
         .header.scrolled {
-            background: rgba(26, 26, 46, 0.95);
+            background: rgba(255, 255, 255, 0.85);
             box-shadow: var(--shadow-glow);
         }
 
@@ -159,7 +159,7 @@
         }
 
         .toggle-btn {
-            padding: 0.5rem 1rem;
+            padding: 15px 4rem;
             border: none;
             background: #4ca7d0;
             color: #ffffff;
@@ -205,9 +205,9 @@
         }
 
         .hero-greeting {
-            font-size: 1.1rem;
-            color: var(--accent-blue);
-            margin-bottom: 1rem;
+            font-size: 2rem;
+            color: blue;
+            margin: 2rem 0px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.1em;
@@ -232,7 +232,7 @@
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto 3rem;
-            color: var(--text-secondary);
+            color: white;
             line-height: 1.8;
         }
 
@@ -257,6 +257,8 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
+            
+    justify-content: center;
         }
 
         .btn::before {
@@ -299,8 +301,8 @@
 
         /* Experience Section */
         .experience {
-            padding: 100px 0;
-            background: rgba(0, 0, 0, 0.2);
+            padding: 100px 10px;
+            background: rgba(255, 255, 255, 0.2);
         }
 
         .section-title {
@@ -308,7 +310,7 @@
             text-align: center;
             margin-bottom: 4rem;
             font-weight: 800;
-            background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+            background: white;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -330,8 +332,9 @@
         }
 
         .company-item {
+            color: black;
             padding: 1.5rem;
-            background: var(--surface-card);
+            background: white;
             border: 1px solid var(--border-glass);
             border-radius: 16px;
             cursor: pointer;
@@ -341,7 +344,7 @@
         }
 
         .company-item:hover {
-            background: var(--surface-glass);
+            background: rgb(0 0 0 / 10%);
             transform: translateX(8px);
             border-color: var(--accent-blue);
         }
@@ -350,12 +353,11 @@
             background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
             color: white;
             box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
-            transform: translateX(12px);
         }
 
         /* Projects Section */
         .projects {
-            padding: 100px 0;
+            padding: 100px 10px;
         }
 
         .projects-grid {
@@ -369,7 +371,7 @@
         }
 
         .project-card {
-            background: var(--surface-card);
+            background: white;
             border: 1px solid var(--border-glass);
             border-radius: 20px;
             overflow: hidden;
@@ -444,7 +446,7 @@
             font-size: 1.4rem;
             margin-bottom: 0.75rem;
             font-weight: 700;
-            color: var(--text-primary);
+            color: black;
         }
 
         .project-description {
@@ -505,7 +507,7 @@
             font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--text-primary), var(--accent-blue));
+            background: rgb(255, 255, 255);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -513,30 +515,37 @@
 
         .contact-subtitle {
             font-size: 1.2rem;
-            color: var(--text-secondary);
+            color: white;
             max-width: 600px;
             margin: 0 auto;
         }
 
         .contact-container {
+            gap:20px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
             align-items: start;
         }
 
         .contact-info {
-            background: var(--surface-card);
+            background: white;
             border: 1px solid var(--border-glass);
             border-radius: 20px;
-            padding: 3rem;
+            padding: 3rem 10px;
             backdrop-filter: blur(10px);
         }
 
         .contact-info h3 {
             font-size: 1.5rem;
             margin-bottom: 2rem;
-            color: var(--text-primary);
+            color: black;
+        }
+
+        .contact-item > a{
+            display: flex;
+            gap: 20px;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
         }
 
         .contact-item {
@@ -545,7 +554,7 @@
             gap: 1rem;
             margin-bottom: 2rem;
             padding: 1rem;
-            background: var(--surface-glass);
+            background: rgb(0 0 0 / 10%);
             border-radius: 12px;
             transition: all 0.3s ease;
         }
@@ -553,6 +562,15 @@
         .contact-item:hover {
             background: var(--surface-card);
             transform: translateX(8px);
+            background-color: white;
+            color:black
+        }
+
+                .contact-item:hover > a{
+            display: flex;
+            gap: 20px;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
         }
 
         .contact-icon {
@@ -567,10 +585,10 @@
         }
 
         .contact-form {
-            background: var(--surface-card);
+            background: white;
             border: 1px solid var(--border-glass);
             border-radius: 20px;
-            padding: 3rem;
+            padding: 3rem 10px;
             backdrop-filter: blur(10px);
         }
 
@@ -582,14 +600,14 @@
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 600;
-            color: var(--text-primary);
+            color: black;
         }
 
         .form-input {
             width: 100%;
             padding: 1rem 1.5rem;
             background: var(--surface-glass);
-            border: 1px solid var(--border-glass);
+            border: 1px solid black;
             border-radius: 12px;
             color: var(--text-primary);
             font-size: 1rem;
@@ -635,6 +653,56 @@
             font-weight: 600;
             display: none;
             animation: slideIn 0.3s ease;
+        }
+
+            .experience-description, .experience-location{
+                    color: white;
+            }
+
+        @media (max-width: 768px) {
+    .toggle-btn, .btn-primary {
+        height: 100px;
+        width: 100%;
+    }
+}
+
+        
+        @media (min-width: 425px) {
+            .contact-form, .contact-info {
+                padding: 3rem;
+            }
+        }
+
+        @media (max-width: 425px) {
+
+                    .section-title {
+            font-size: 2rem;
+                    }
+
+
+
+            .contact-title {
+    font-size: 2.5rem;
+            }
+
+
+            .contact-form, .contact-info {
+                width: 300px;
+                padding: 3rem 10px;
+                        margin: auto;
+            }
+
+            .contact-form {
+                background: white;
+                border: 1px solid var(--border-glass);
+                border-radius: 20px;
+                /* padding: 3rem; */
+                backdrop-filter: blur(10px);
+            }
+            .container {
+    margin: 0px 10px;
+    padding: 0px;
+}
         }
 
         @keyframes slideIn {
@@ -705,7 +773,7 @@
             position: absolute;
             right: 1.5rem;
             top: 1.5rem;
-            color: var(--text-secondary);
+            color: white;
             font-size: 28px;
             font-weight: bold;
             cursor: pointer;
@@ -741,10 +809,7 @@
             margin-bottom: 0.5rem;
         }
 
-        .experience-location {
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-        }
+
 
         .experience-description p {
             margin-bottom: 1rem;
@@ -848,8 +913,8 @@
         <div class="container">
             <div class="nav-brand">MH.</div>
             <nav class="nav">
-                <a href="#projets" class="nav-link">Projets</a>
                 <a href="#experience" class="nav-link">Expérience</a>
+                <a href="#projets" class="nav-link">Projets</a>
             </nav>
             <div class="page-toggle">
                 <button class="toggle-btn active" data-page="portfolio">Portfolio</button>
@@ -1151,15 +1216,7 @@
                             <div class="contact-icon">📧</div>
                             <div>
                                 <h4>Email</h4>
-                                <p>contact@monentreprise.fr</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">📞</div>
-                            <div>
-                                <h4>Téléphone</h4>
-                                <p>+33 1 23 45 67 89</p>
+                                <p>halat@outlook.fr</p>
                             </div>
                         </div>
 
@@ -1167,29 +1224,27 @@
                             <div class="contact-icon">📍</div>
                             <div>
                                 <h4>Localisation</h4>
-                                <p>Paris, France</p>
+                                <p>Lyon, France</p>
                             </div>
                         </div>
 
                         <div class="contact-item">
                             <a href="https://linkedin.com/company/monentreprise" target="_blank"
-                                rel="noopener noreferrer"
-                                style="text-decoration: none; color: white; width: 100%; display: flex; gap: 5%;">
+                                rel="noopener noreferrer">
                                 <div class="contact-icon">💼</div>
                                 <div>
                                     <h4>LinkedIn</h4>
-                                    <p>linkedin.com/company/monentreprise</p>
+                                    <p>linkedin.com/in/mhalat</p>
                                 </div>
                             </a>
                         </div>
 
                         <div class="contact-item">
-                            <a href="https://github.com/monentreprise" target="_blank" rel="noopener noreferrer"
-                                style="text-decoration: none; color: white; width: 100%; display: flex; gap: 5%;">
+                            <a href="https://github.com/monentreprise" target="_blank" rel="noopener noreferrer">
                                 <div class="contact-icon">🐙</div>
                                 <div>
                                     <h4>GitHub</h4>
-                                    <p>github.com/monentreprise</p>
+                                    <p>github.com/Mhalat1</p>
                                 </div>
                             </a>
                         </div>
