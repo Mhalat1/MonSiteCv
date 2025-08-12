@@ -660,13 +660,12 @@
                     color: white;
             }
 
-        @media (max-width: 768px) {
-    .toggle-btn, .btn-primary {
-        height: 100px;
-        width: 100%;
-    }
-}
-
+        @media (min-width: 768px) {
+            .toggle-btn {
+                padding: 15px 6vw;
+            
+            }
+        }
         
         @media (min-width: 425px) {
             .contact-form, .contact-info {
@@ -849,6 +848,11 @@
 
         /* Responsive Design */
         @media(max-width: 768px) {
+                .toggle-btn, .btn-primary {
+        height: 100px;
+        width: 100%;
+    }
+            
             .hero-title {
                 font-size: 2.5rem;
             }
