@@ -159,7 +159,7 @@
         }
 
         .toggle-btn {
-            padding: 15px 13vw;
+            padding: 15px 11vw;
             border: none;
             background: #4ca7d0;
             color: #ffffff;
@@ -871,9 +871,6 @@
                 display: none;
             }
 
-            .page-toggle {
-                margin-left: auto;
-            }
 
             .modal-content {
                 margin: 5%;
@@ -898,6 +895,10 @@
         .loading {
             animation: pulse 2s infinite;
         }
+
+        g-recaptcha > div{
+            width: 100%;
+        }
     </style>
 
     <!-- Dans le <head> pour recaptcha-->
@@ -912,10 +913,6 @@
     <!-- Modern Header -->
     <header class="header" id="header">
         <div class="container">
-            <nav class="nav">
-                <a href="#experience" class="nav-link">Expérience</a>
-                <a href="#projets" class="nav-link">Projets</a>
-            </nav>
             <div class="page-toggle">
                 <button class="toggle-btn active" data-page="portfolio">Portfolio</button>
                 <button class="toggle-btn" data-page="contact">Contact</button>
